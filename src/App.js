@@ -3,7 +3,7 @@ import Home from './Components/Home/Home.component';
 
 function App() {
   return (
-    <div className="" style={{backgroundColor: "#E4E4E5"}}>
+    <div className="" style={{backgroundColor: "#fff"}}>
       <Home />
     </div>
   );

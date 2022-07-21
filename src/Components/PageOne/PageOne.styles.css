@@ -27,7 +27,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    opacity: 0.04;
+    opacity: 0.05;
 
     content: '';
     position: absolute;
@@ -37,3 +37,37 @@
     left: 0px;
     
 }
+
+.root {
+    margin: 0;
+    padding: 0
+  }
+  
+  
+  @media print {
+    html,
+    body {
+      height: initial !important;
+      overflow: initial !important;
+      -webkit-print-color-adjust: exact;
+    }
+  }
+  
+  @media print {
+    .page-break {
+      margin-top: 1rem;
+      display: block;
+      page-break-after: always;
+    }
+  }
+  
+  @page {
+    size: auto;
+    /* margin: 20mm; */
+  }
+
+  .bottom{position:absolute; bottom:0; right: 0; left: 0;}
+
+  @media print {
+    @page { size: landscape; }
+  }

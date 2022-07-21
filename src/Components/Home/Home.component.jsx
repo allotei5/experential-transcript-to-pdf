@@ -9,6 +9,7 @@ const Home = () => {
   const componentRef = useRef(null);
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
+    documentTitle: "Ashesi Experential Transcript",
   });
   return (
     <div className='container mx-auto px-4 py-5'>
