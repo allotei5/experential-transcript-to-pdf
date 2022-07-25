@@ -5,6 +5,8 @@ import citizenshipIcon from '../../Assets/citizenship.svg'
 import './PageOne.styles.css'
 
 import React from 'react'
+import StudentProfile from '../StudentProfile/StudentProfile.component'
+import ExperienceSummary from '../ExperienceSummary/ExperienceSummary.component'
 
 const PageOne = React.forwardRef((props, ref) => {
  
@@ -24,28 +26,7 @@ const PageOne = React.forwardRef((props, ref) => {
               <h1 className='uppercase text-xl text-[#843132]'>
                 student information
               </h1>
-              <div>
-                <table className=''>
-                  <tbody className='text-left'>
-                    <tr>
-                      <th className='text-[15px]'>NAME</th>
-                      <td>Marylyn-Lisa Hemans-Cobbinah</td>
-                    </tr>
-                    <tr>
-                      <th className='text-[15px]'>DEGREE</th>
-                      <td>BSc</td>
-                    </tr>
-                    <tr>
-                      <th className='text-[15px]'>MAJOR</th>
-                      <td>Management Information Systems</td>
-                    </tr>
-                    <tr>
-                      <th className='text-[15px]'>EXPECTED DATE OF <br />GRADUATION</th>
-                      <td>June 2023</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <StudentProfile />
             </div>
           </div>
 
@@ -58,24 +39,9 @@ const PageOne = React.forwardRef((props, ref) => {
                 summary of ashesi experiences
               </h1>
               <div className='grid grid-cols-3 justify-items-center items-end'>
-                <div>
-                  <img src={scholarshipIcon} alt='scholarship icon' className='w-14 mx-auto' />
-                  <h2 className='text-center font-semibold uppercase text-lg mt-2'>SCHOLARSHIP</h2>
-                  <div className='bg-[#843132] p-[2px] rounded my-0'></div>
-                  <h2 className='text-center font-bold uppercase text-lg'>256 HOURS</h2>
-                </div>
-                <div>
-                  <img src={leadershipIcon} alt='leadership icon' className='w-14 mx-auto' />
-                  <h2 className='text-center font-semibold uppercase text-lg mt-2'>LEADERSHIP</h2>
-                  <div className='bg-[#843132] p-[2px] rounded my-0'></div>
-                  <h2 className='text-center font-bold uppercase text-lg'>256 HOURS</h2>
-                </div>
-                <div>
-                  <img src={citizenshipIcon} alt='citizenship icon' className='w-14 mx-auto'  />
-                  <h2 className='text-center font-semibold uppercase text-lg mt-2'>CITIZENSHIP</h2>
-                  <div className='bg-[#843132] p-[2px] rounded my-0'></div>
-                  <h2 className='text-center font-bold uppercase text-lg'>256 HOURS</h2>
-                </div>              
+                <ExperienceSummary expType={{id: 1, name: "Scholarship"}} />
+                <ExperienceSummary expType={{id: 2, name: "Leaderhip"}} />
+                <ExperienceSummary expType={{id: 3, name: "citizenship"}} />              
               </div>
               <h1 className='uppercase text-2xl text-[#843132] text-center font-bold my-0'>
                 experience timeline
