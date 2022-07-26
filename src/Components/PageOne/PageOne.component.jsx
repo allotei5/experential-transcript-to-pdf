@@ -7,8 +7,20 @@ import './PageOne.styles.css'
 import React from 'react'
 import StudentProfile from '../StudentProfile/StudentProfile.component'
 import ExperienceSummary from '../ExperienceSummary/ExperienceSummary.component'
+import AcademicYear from '../AcademicYear/AcademicYear.component'
+import { getStudentProfile } from '../../backendApi/requests'
+import { useParams } from 'react-router-dom'
+import { useQuery } from '@tanstack/react-query'
+
 
 const PageOne = React.forwardRef((props, ref) => {
+
+  const params = useParams()
+  const { isLoading, data, error } = useQuery(['student-profile'], () => getStudentProfile(params.st))
+
+  if(data?.code !== undefined) {
+    return <p>User Does not exist</p>
+  }
  
   return (
     <div  ref={ref}> 
@@ -47,142 +59,10 @@ const PageOne = React.forwardRef((props, ref) => {
                 experience timeline
               </h1>
               <div className='grid grid-cols-4 mx-8 gap-5'>
-                <div>
-                  <h1 className='uppercase text-lg text-center font-semibold'>
-                    2018
-                  </h1>
-                  <div className='bg-[#843132] p-[2px] rounded my-1'></div>
-                  <div className='grid grid-cols-[1fr_8fr] gap-2 mb-1'>
-                    <div className='justify-self-start pt-1'>
-                      <img src={scholarshipIcon} alt="scholarship icon" className='w-16 text-right' />
-                    </div>
-                    <div className='p-0 m-0'>
-                      <p className='p-0 m-0 text-[12px]'>lorem ipsum dolor sit i love the fan asdf bafi sfuhashi naush sjafnsd afisdhfa  afudsn fnajsdfn adnf </p>
-                    </div>
-                  </div>
-                  <div className='grid grid-cols-[1fr_8fr] gap-2 mb-1'>
-                    <div className='justify-self-start pt-1'>
-                      <img src={scholarshipIcon} alt="scholarship icon" className='w-16 text-right' />
-                    </div>
-                    <div className='p-0 m-0'>
-                      <p className='p-0 m-0 text-[12px]'>lorem ipsum dolor sit i love the fan asdf bafi sfuhashi naush sjafnsd afisdhfa  afudsn fnajsdfn adnf</p>
-                    </div>
-                  </div>
-                  <div className='grid grid-cols-[1fr_8fr] gap-2 mb-1'>
-                    <div className='justify-self-start pt-1'>
-                      <img src={scholarshipIcon} alt="scholarship icon" className='w-16 text-right' />
-                    </div>
-                    <div className='p-0 m-0'>
-                      <p className='p-0 m-0 text-[12px]'>lorem ipsum dolor sit i love the fan asdf bafi sfuhashi naush sjafnsd afisdhfa  afudsn fnajsdfn adnf</p>
-                    </div>
-                  </div>
-                  <div className='grid grid-cols-[1fr_8fr] gap-2 mb-1'>
-                    <div className='justify-self-start pt-1'>
-                      <img src={citizenshipIcon} alt="citizenship icon" className='w-16 text-right' />
-                    </div>
-                    <div className='p-0 m-0'>
-                      <p className='p-0 m-0 text-[12px]'>lorem ipsum dolor sit i love the fan asdf bafi sfuhashi naush sjafnsd afisdhfa  afudsn fnajsdfn adnf</p>
-                    </div>
-                  </div>
-                  <div className='grid grid-cols-[1fr_8fr] gap-2 mb-1'>
-                    <div className='justify-self-start pt-1'>
-                      <img src={leadershipIcon} alt="leadership icon" className='w-16 text-right' />
-                    </div>
-                    <div className='p-0 m-0'>
-                      <p className='p-0 m-0 text-[12px]'>lorem ipsum dolor sit i love the fan asdf bafi sfuhashi naush sjafnsd afisdhfa  afudsn fnajsdfn adnf</p>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <h1 className='uppercase text-lg text-center font-semibold'>
-                    2019
-                  </h1>
-                  <div className='bg-[#843132] p-[2px] rounded my-1'></div>
-                  <div className='grid grid-cols-[1fr_8fr] gap-2 mb-1'>
-                    <div className='justify-self-start pt-1'>
-                      <img src={scholarshipIcon} alt="scholarship icon" className='w-16 text-right' />
-                    </div>
-                    <div className='p-0 m-0'>
-                      <p className='p-0 m-0'>Speaker at photography & film club in Ashesi</p>
-                    </div>
-                  </div>
-                  <div className='grid grid-cols-[1fr_8fr] gap-2 mb-1'>
-                    <div className='justify-self-start pt-1'>
-                      <img src={citizenshipIcon} alt="citizenship icon" className='w-16 text-right' />
-                    </div>
-                    <div className='p-0 m-0'>
-                      <p className='p-0 m-0'>Speaker at photography & film club in Ashesi</p>
-                    </div>
-                  </div>
-                  <div className='grid grid-cols-[1fr_8fr] gap-2 mb-1'>
-                    <div className='justify-self-start pt-1'>
-                      <img src={leadershipIcon} alt="leadership icon" className='w-16 text-right' />
-                    </div>
-                    <div className='p-0 m-0'>
-                      <p className='p-0 m-0'>Speaker at photography & film club in Ashesi</p>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <h1 className='uppercase text-lg text-center font-semibold'>
-                    2020
-                  </h1>
-                  <div className='bg-[#843132] p-[2px] rounded my-1'></div>
-                  <div className='grid grid-cols-[1fr_8fr] gap-2 mb-1'>
-                    <div className='justify-self-start pt-1'>
-                      <img src={scholarshipIcon} alt="scholarship icon" className='w-16 text-right' />
-                    </div>
-                    <div className='p-0 m-0'>
-                      <p className='p-0 m-0'>Speaker at photography & film club in Ashesi</p>
-                    </div>
-                  </div>
-                  <div className='grid grid-cols-[1fr_8fr] gap-2 mb-1'>
-                    <div className='justify-self-start pt-1'>
-                      <img src={citizenshipIcon} alt="citizenship icon" className='w-16 text-right' />
-                    </div>
-                    <div className='p-0 m-0'>
-                      <p className='p-0 m-0'>Speaker at photography & film club in Ashesi</p>
-                    </div>
-                  </div>
-                  <div className='grid grid-cols-[1fr_8fr] gap-2 mb-1'>
-                    <div className='justify-self-start pt-1'>
-                      <img src={leadershipIcon} alt="leadership icon" className='w-16 text-right' />
-                    </div>
-                    <div className='p-0 m-0'>
-                      <p className='p-0 m-0'>Speaker at photography & film club in Ashesi</p>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <h1 className='uppercase text-lg text-center font-semibold'>
-                    2021
-                  </h1>
-                  <div className='bg-[#843132] p-[2px] rounded my-1'></div>
-                  <div className='grid grid-cols-[1fr_8fr] gap-2 mb-1'>
-                    <div className='justify-self-start pt-1'>
-                      <img src={scholarshipIcon} alt="scholarship icon" className='w-16 text-right' />
-                    </div>
-                    <div className='p-0 m-0'>
-                      <p className='p-0 m-0'>Speaker at photography & film club in Ashesi</p>
-                    </div>
-                  </div>
-                  <div className='grid grid-cols-[1fr_8fr] gap-2 mb-1'>
-                    <div className='justify-self-start pt-1'>
-                      <img src={citizenshipIcon} alt="citizenship icon" className='w-16 text-right' />
-                    </div>
-                    <div className='p-0 m-0'>
-                      <p className='p-0 m-0'>Speaker at photography & film club in Ashesi</p>
-                    </div>
-                  </div>
-                  <div className='grid grid-cols-[1fr_8fr] gap-2 mb-1'>
-                    <div className='justify-self-start pt-1'>
-                      <img src={leadershipIcon} alt="leadership icon" className='w-16 text-right' />
-                    </div>
-                    <div className='p-0 m-0'>
-                      <p className='p-0 m-0'>Speaker at photography & film club in Ashesi</p>
-                    </div>
-                  </div>
-                </div>
+                <AcademicYear year={{id: 1, name: "Freshman Year"}} />
+                <AcademicYear year={{id: 2, name: "Freshman Year"}} />
+                <AcademicYear year={{id: 3, name: "Freshman Year"}} />
+                <AcademicYear year={{id: 4, name: "Freshman Year"}} />
                 
               </div>
           </div>

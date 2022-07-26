@@ -5,7 +5,6 @@ import { getStudentProfile } from '../../backendApi/requests';
 import Loading from '../Loading/Loading.component';
 
 const StudentProfile = () => {
-  const [ student, setStudent ] = useState(null);
   const params = useParams();
 //   console.log(params)
 
