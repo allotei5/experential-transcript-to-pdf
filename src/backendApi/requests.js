@@ -29,6 +29,12 @@ export const getStudentProfile = async (studentId) => {
     
 }
 
+/**
+ * It takes a studentId and a pillar and returns the total hours for that student and pillar.
+ * @param studentId - the student's id
+ * @param pillar - 1, 2, 3
+ * @returns The response from the server.
+ */
 export const getHours = async (studentId, pillar) => {
     const formData = new FormData();
     formData.append('st', studentId);
@@ -37,10 +43,24 @@ export const getHours = async (studentId, pillar) => {
     return res;
 }
 
+/**
+ * It takes a student ID and a level, and returns the experiences for that student at that level
+ * @param studentId - the student's id
+ * @param level - 1, 2, 3, 4
+ * @returns An object with a property called data.
+ */
 export const getExperiencesPerYear = async (studentId, level) => {
     const formData = new FormData();
     formData.append('st', studentId);
     formData.append('lev', level);
     const res = await api.post('/react_get_experience.php', formData);
+    return res;
+}
+
+export const getExperiencesPerCat = async (studentId, cat) => {
+    const formData = new FormData();
+    formData.append('st', studentId)
+    formData.append('cat', cat)
+    const res = await api.post('react_get_exp_logo.php', formData);
     return res;
 }

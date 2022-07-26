@@ -11,6 +11,7 @@ import AcademicYear from '../AcademicYear/AcademicYear.component'
 import { getStudentProfile } from '../../backendApi/requests'
 import { useParams } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
+import ExperieceLogo from '../ExperienceLogo/ExperieceLogo.component'
 
 
 const PageOne = React.forwardRef((props, ref) => {
@@ -87,75 +88,9 @@ const PageOne = React.forwardRef((props, ref) => {
           <div className='bg-gray-300 p-[2px] rounded mx-5'></div>
 
           <div className='grid grid-cols-3 justify-items-left mt-4'>
-            <div>
-              <h3 className='uppercase text-center font-semibold text-xl text-[#843132] mb-8'>scholarship</h3>
-              <div className='mb-3'>
-                <img src={ashesiLogo} alt="student logo" className="w-24 mx-auto" />
-                <h4 className='uppercase text-center font-semibold text-sm text-[#843132] '>Head of Public Relations Committee</h4>
-                <h4 className='uppercase text-center font-semibold text-sm text-[#843132] '>Ashesi University</h4>
-              </div>
-              <div className='mb-3'>
-                <img src={ashesiLogo} alt="student logo" className="w-24 mx-auto" />
-                <h4 className='uppercase text-center font-semibold text-sm text-[#843132] '>Head of Public Relations Committee</h4>
-                <h4 className='uppercase text-center font-semibold text-sm text-[#843132] '>Ashesi University</h4>
-              </div>
-              <div className='mb-3'>
-                <img src={ashesiLogo} alt="student logo" className="w-24 mx-auto" />
-                <h4 className='uppercase text-center font-semibold text-sm text-[#843132] '>Head of Public Relations Committee</h4>
-                <h4 className='uppercase text-center font-semibold text-sm text-[#843132] '>Ashesi University</h4>
-              </div>
-              <div className='mb-3'>
-                <img src={ashesiLogo} alt="student logo" className="w-24 mx-auto" />
-                <h4 className='uppercase text-center font-semibold text-sm text-[#843132] '>Head of Public Relations Committee</h4>
-                <h4 className='uppercase text-center font-semibold text-sm text-[#843132] '>Ashesi University</h4>
-              </div>
-            </div>
-            <div className='border-x-4'>
-              <div>
-                <h3 className='uppercase text-center font-semibold text-xl text-[#843132] mb-8'>leadership</h3>
-                <div className='mb-3'>
-                  <img src={ashesiLogo} alt="student logo" className="w-24 mx-auto" />
-                  <h4 className='uppercase text-center font-semibold text-sm text-[#843132] '>Head of Public Relations Committee</h4>
-                  <h4 className='uppercase text-center font-semibold text-sm text-[#843132] '>Ashesi University</h4>
-                </div>
-                <div className='mb-3'>
-                  <img src={ashesiLogo} alt="student logo" className="w-24 mx-auto" />
-                  <h4 className='uppercase text-center font-semibold text-sm text-[#843132] '>Head of Public Relations Committee</h4>
-                  <h4 className='uppercase text-center font-semibold text-sm text-[#843132] '>Ashesi University</h4>
-                </div>
-                <div className='mb-3'>
-                  <img src={ashesiLogo} alt="student logo" className="w-24 mx-auto" />
-                  <h4 className='uppercase text-center font-semibold text-sm text-[#843132] '>Head of Public Relations Committee</h4>
-                  <h4 className='uppercase text-center font-semibold text-sm text-[#843132] '>Ashesi University</h4>
-                </div>
-                <div className='mb-3'>
-                  <img src={ashesiLogo} alt="student logo" className="w-24 mx-auto" />
-                  <h4 className='uppercase text-center font-semibold text-sm text-[#843132] '>Head of Public Relations Committee</h4>
-                  <h4 className='uppercase text-center font-semibold text-sm text-[#843132] '>Ashesi University</h4>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div>
-                <h3 className='uppercase text-center font-semibold text-xl text-[#843132] mb-8'>citizenship</h3>
-                <div className='mb-3 mx-10'>
-                  <img src={ashesiLogo} alt="student logo" className="w-24 mx-auto" />
-                  <h4 className='uppercase text-center font-semibold text-[#843132] text-[12px]'>lafia afkdsnf a kmasfdm adfnap dfandsofn aandfpan adfjapo dndoafn adfn</h4>
-                </div>
-                <div className='mb-3 mx-10'>
-                  <img src={ashesiLogo} alt="student logo" className="w-24 mx-auto" />
-                  <h4 className='uppercase text-center font-semibold text-[#843132] text-[12px]'>lafia afkdsnf a kmasfdm adfnap dfandsofn aandfpan adfjapo dndoafn adfn</h4>
-                </div>
-                <div className='mb-3 mx-10'>
-                  <img src={ashesiLogo} alt="student logo" className="w-24 mx-auto" />
-                  <h4 className='uppercase text-center font-semibold text-[#843132] text-[12px]'>lafia afkdsnf a kmasfdm adfnap dfandsofn aandfpan adfjapo dndoafn adfn</h4>
-                </div>
-                <div className='mb-3 mx-10'>
-                  <img src={ashesiLogo} alt="student logo" className="w-24 mx-auto" />
-                  <h4 className='uppercase text-center font-semibold text-[#843132] text-[12px]'>lafia afkdsnf a kmasfdm adfnap dfandsofn aandfpan adfjapo dndoafn adfn</h4>
-                </div>
-              </div>
-            </div>
+            <ExperieceLogo expLogo={{id: 1, name: "Scholarship"}} />
+            <ExperieceLogo expLogo={{id: 2, name: "Leadership"}} />
+            <ExperieceLogo expLogo={{id: 3, name: "Citizenship"}} />
           </div>
           <div className='bottom'>
             <div className='bg-gray-300 p-[2px] rounded mx-5'></div>
