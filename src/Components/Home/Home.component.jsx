@@ -27,7 +27,7 @@ const Home = () => {
     
   // }
 
-  const { isLoading, data } = useQuery(['logged-in'], () => getUser())
+  const { isLoading, data, error } = useQuery(['logged-in'], () => getUser())
 
   if(isLoading) {
     return <Loading />
@@ -42,6 +42,7 @@ const Home = () => {
     <div style={{backgroundColor: "#fff"}}>
       <div className='container mx-auto px-4 py-5'>
         <div className='grid justify-items-end mb-5'>
+            <i>Recommended browsers: EDGE and Chrome</i>
             <button onClick={handlePrint} className='bg-red-900 text-lg text-white px-5 py-2 rounded'>Download</button>
         </div>
         <PageOne ref={componentRef} />

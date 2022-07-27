@@ -13,12 +13,15 @@ const ExperieceLogo = ({ expLogo }) => {
         const fetchLogos = async () => {
             const logosFromServer = await getExperiencesPerCat(params.st, expLogo.id);
             let preparedLogos = [];
-            logosFromServer.data.forEach((logo) => {
-                if (logo.exp_logo !== null) {
-                    preparedLogos.push(logo)
-                }
-            })
+            if(logosFromServer.data.length > 0) {
+                logosFromServer.data.forEach((logo) => {
+                    if (logo.exp_logo !== null) {
+                        preparedLogos.push(logo)
+                    }
+                })
+            }
             setExpLogos(preparedLogos);
+            
         }
         fetchLogos();
     }, [])
@@ -29,13 +32,13 @@ const ExperieceLogo = ({ expLogo }) => {
         <div>
             <h3 className='uppercase text-center font-semibold text-xl text-[#843132] mb-8'>{expLogo.name}</h3>
             {
-                (expLogos.length === 0) && <p>No experiences here</p>   
+                (expLogos.length === 0) && <p></p>   
             }
             {
-                expLogos.length > 0 && expLogos.map((lgs) => (
-                    <div className='mb-3 mx-10'>
-                        <img src={ashesiLogo} alt="student logo" className="w-24 mx-auto" />
-                        <h4 className='uppercase text-center font-semibold text-[#843132] text-[12px]'>{lgs.exp_address}</h4>
+                expLogos.length > 0 && expLogos.map((lgs, index) => (
+                    <div className='mb-3 mx-10' key={index}>
+                        <img src={lgs.exp_logo} alt="student logo" className="w-24 mx-auto" />
+                        <h4 className='uppercase text-center font-semibold text-[#843132] text-[11px]'>{lgs.exp_address}</h4>
                     </div>
                 ))
             }

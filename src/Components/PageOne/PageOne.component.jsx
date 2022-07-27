@@ -45,7 +45,7 @@ const PageOne = React.forwardRef((props, ref) => {
           </div>
 
           {/* divider */}
-          <div className='bg-gray-300 p-[2px] rounded mx-5'></div>
+          <div className='bg-gray-300 p-[1px] rounded mx-0'></div>
 
           {/* Section 2 */}
           <div className='pt-0'>
@@ -60,7 +60,7 @@ const PageOne = React.forwardRef((props, ref) => {
               <h1 className='uppercase text-2xl text-[#843132] text-center font-bold my-0'>
                 experience timeline
               </h1>
-              <div className='grid grid-cols-4 mx-8 gap-5'>
+              <div className='grid grid-cols-4 mx-0 gap-5'>
                 <AcademicYear year={{id: 1, name: "Freshman Year"}} />
                 <AcademicYear year={{id: 2, name: "Freshman Year"}} />
                 <AcademicYear year={{id: 3, name: "Freshman Year"}} />
@@ -78,7 +78,7 @@ const PageOne = React.forwardRef((props, ref) => {
         <div className="bg-ashesi pb-10">
           <h1 className='text-4xl font-bold uppercase ashesi-color my-2 text-center'>Ashesi University Experential Transcript</h1>
           {/* divider */}
-          <div className='bg-gray-300 p-[2px] rounded mx-5'></div>
+          <div className='bg-gray-300 p-[1px] rounded mx-0'></div>
 
           <div className='grid grid-cols-3 justify-items-left mt-4'>
             <ExperieceLogo expLogo={{id: 1, name: "Scholarship"}} />

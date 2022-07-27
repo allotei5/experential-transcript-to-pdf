@@ -1,5 +1,6 @@
 {
   "name": "experential-transcript-pdf-generator",
+  "homepage": "https://apps.ashesi.edu.gh/exp_transcript/transcript",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

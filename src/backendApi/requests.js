@@ -2,7 +2,7 @@ import api from "./api";
 
 export const getUser = async () => {
 
-    const res = await api.get('/react_check_login.php')
+    const res = await api.get('/react_check_login')
     return res
     
 }
@@ -18,10 +18,12 @@ export const getUser = async () => {
  * @returns An object with a data property that the student data
  */
 export const getStudentProfile = async (studentId) => {
+    // studentId = atob(studentId);
     const formData = new FormData();
     formData.append('st', studentId);
     try {
-        const res = await api.post('/react_get_user_profile.php', formData);
+        const res = await api.post('/react_get_user_profile', formData);
+        console.log(res)
         return res;
     } catch (error) {
         return error
@@ -36,10 +38,11 @@ export const getStudentProfile = async (studentId) => {
  * @returns The response from the server.
  */
 export const getHours = async (studentId, pillar) => {
+    // studentId = atob(studentId);
     const formData = new FormData();
     formData.append('st', studentId);
     formData.append('pil', pillar);
-    const res = await api.post('/react_get_total_hours.php', formData);
+    const res = await api.post('/react_get_total_hours', formData);
     return res;
 }
 
@@ -50,10 +53,11 @@ export const getHours = async (studentId, pillar) => {
  * @returns An object with a property called data.
  */
 export const getExperiencesPerYear = async (studentId, level) => {
+    // studentId = atob(studentId);
     const formData = new FormData();
     formData.append('st', studentId);
     formData.append('lev', level);
-    const res = await api.post('/react_get_experience.php', formData);
+    const res = await api.post('/react_get_experience', formData);
     return res;
 }
 
@@ -64,9 +68,10 @@ export const getExperiencesPerYear = async (studentId, level) => {
  * @returns An array of objects.
  */
 export const getExperiencesPerCat = async (studentId, cat) => {
+    // studentId = atob(studentId);
     const formData = new FormData();
     formData.append('st', studentId)
     formData.append('cat', cat)
-    const res = await api.post('react_get_exp_logo.php', formData);
+    const res = await api.post('react_get_exp_logo', formData);
     return res;
 }

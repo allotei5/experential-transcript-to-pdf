@@ -7,7 +7,7 @@ const Footer = ({ pageNumber }) => {
     const currentDate = date.getDate() + "/" + month + "/" + date.getFullYear()
   return (
     <div className='bottom'>
-        <div className='bg-gray-300 p-[2px] rounded mx-5'></div>
+        <div className='bg-gray-300 p-[2px] rounded mx-0'></div>
         <div className='flex justify-between mx-5'>
             <div className='text-[12px]'>Issue Date: {currentDate}</div>
             <div className='text-[12px]'>1 University Avenue, Berekuso E/R, Ghana</div>

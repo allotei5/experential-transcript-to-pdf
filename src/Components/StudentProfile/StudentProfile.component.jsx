@@ -17,6 +17,8 @@ const StudentProfile = () => {
   if(isLoading) {
     return <Loading height='100px' />
   }
+
+  console.log(error)
   
   return (
     <div>

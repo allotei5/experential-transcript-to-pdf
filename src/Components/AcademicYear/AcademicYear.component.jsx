@@ -55,7 +55,7 @@ const AcademicYear = ({ year }) => {
         <h1 className='uppercase text-lg text-center font-semibold'>
         {academicYear}
         </h1>
-        <div className='bg-[#843132] p-[2px] rounded my-1'></div>
+        <div className='bg-[#843132] p-[2px] rounded my-0'></div>
         {
             experiences.length === 0 && <p>No experiences here yet</p>
         }
