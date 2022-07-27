@@ -12,6 +12,7 @@ import { getStudentProfile } from '../../backendApi/requests'
 import { useParams } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
 import ExperieceLogo from '../ExperienceLogo/ExperieceLogo.component'
+import Footer from '../Footer/Footer.component'
 
 
 const PageOne = React.forwardRef((props, ref) => {
@@ -20,7 +21,7 @@ const PageOne = React.forwardRef((props, ref) => {
   const { isLoading, data, error } = useQuery(['student-profile'], () => getStudentProfile(params.st))
 
   if(data?.code !== undefined) {
-    return <p>User Does not exist</p>
+    return <p>Student Does not exist</p>
   }
  
   return (
@@ -47,8 +48,8 @@ const PageOne = React.forwardRef((props, ref) => {
           <div className='bg-gray-300 p-[2px] rounded mx-5'></div>
 
           {/* Section 2 */}
-          <div className='pt-1'>
-              <h1 className='uppercase text-2xl text-[#843132] text-center font-bold mb-3'>
+          <div className='pt-0'>
+              <h1 className='uppercase text-2xl text-[#843132] text-center font-bold mb-1'>
                 summary of ashesi experiences
               </h1>
               <div className='grid grid-cols-3 justify-items-center items-end'>
@@ -69,15 +70,7 @@ const PageOne = React.forwardRef((props, ref) => {
           </div>
 
           {/* divider */}
-          <div className='bottom'>
-            <div className='bg-gray-300 p-[2px] rounded mx-5'></div>
-
-            <div className='flex justify-between mx-5'>
-              <div className='text-[12px]'>Issue Date: 210/07/2022</div>
-              <div className='text-[12px]'>1 University Avenue, Berekuso E/R, Ghana</div>
-              <div className='text-[12px]'>Page 1 of 2</div>
-            </div>
-          </div>
+          <Footer pageNumber={1} />
         </div>
       </div>
 
@@ -92,15 +85,7 @@ const PageOne = React.forwardRef((props, ref) => {
             <ExperieceLogo expLogo={{id: 2, name: "Leadership"}} />
             <ExperieceLogo expLogo={{id: 3, name: "Citizenship"}} />
           </div>
-          <div className='bottom'>
-            <div className='bg-gray-300 p-[2px] rounded mx-5'></div>
-
-            <div className='flex justify-between mx-5'>
-              <div className='text-[12px]'>Issue Date: 210/07/2022</div>
-              <div className='text-[12px]'>1 University Avenue, Berekuso E/R, Ghana</div>
-              <div className='text-[12px]'>Page 2 of 2</div>
-            </div>
-          </div>
+          <Footer pageNumber={2} />
         </div>
       </div>
     </div>

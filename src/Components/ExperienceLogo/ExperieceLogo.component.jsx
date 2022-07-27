@@ -12,7 +12,13 @@ const ExperieceLogo = ({ expLogo }) => {
     useEffect(() => {
         const fetchLogos = async () => {
             const logosFromServer = await getExperiencesPerCat(params.st, expLogo.id);
-            setExpLogos(logosFromServer.data);
+            let preparedLogos = [];
+            logosFromServer.data.forEach((logo) => {
+                if (logo.exp_logo !== null) {
+                    preparedLogos.push(logo)
+                }
+            })
+            setExpLogos(preparedLogos);
         }
         fetchLogos();
     }, [])

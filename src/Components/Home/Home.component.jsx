@@ -4,6 +4,8 @@ import { useReactToPrint  } from 'react-to-print'
 import './Home.styles.css'
 import { getUser } from '../../backendApi/requests'
 
+import { Navigate } from 'react-router-dom'
+
 import { useQuery } from '@tanstack/react-query'
 import Loading from '../Loading/Loading.component'
 
@@ -25,15 +27,15 @@ const Home = () => {
     
   // }
 
-  const { isLoading } = useQuery(['logged-in'], () => getUser())
+  const { isLoading, data } = useQuery(['logged-in'], () => getUser())
 
   if(isLoading) {
     return <Loading />
   }
 
-  // if(data?.data.isLogedin == false) {
-  //   console.log("not logged in")
-  // }
+  if(data?.data.isLogedin == false) {
+    window.location.href="https://apps.ashesi.edu.gh/app_server/login/login"
+  }
 
 
   return (

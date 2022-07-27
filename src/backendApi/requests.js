@@ -57,6 +57,12 @@ export const getExperiencesPerYear = async (studentId, level) => {
     return res;
 }
 
+/**
+ * It takes a studentId and a category and returns the experiences that match the category.
+ * @param studentId - the student's id
+ * @param cat - category
+ * @returns An array of objects.
+ */
 export const getExperiencesPerCat = async (studentId, cat) => {
     const formData = new FormData();
     formData.append('st', studentId)

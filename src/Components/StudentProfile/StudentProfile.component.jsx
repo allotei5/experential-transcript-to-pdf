@@ -8,6 +8,10 @@ const StudentProfile = () => {
   const params = useParams();
 //   console.log(params)
 
+  // if no login send to app server login
+  // if no get url send to transcript home page
+  // if no student / user data send to transcript home
+
   const { isLoading, error, data } = useQuery(['student-profile'], () => getStudentProfile(params.st))
 
   if(isLoading) {
@@ -32,7 +36,7 @@ const StudentProfile = () => {
             </tr>
             <tr>
                 <th className='text-[15px]'>EXPECTED DATE OF <br />GRADUATION</th>
-                <td>June 2023</td>
+                <td>{data?.data.year_group_name}</td>
             </tr>
             </tbody>
         </table>
